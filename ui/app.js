@@ -91,17 +91,17 @@ function timeAgo(dateParam) {
   const isThisYear = today.getFullYear() === date.getFullYear();
 
   if (seconds < 5) {
-    return "Just Now";
+    return "Nu";
   } else if (seconds < 60) {
-    return `${seconds} Seconds ago`;
+    return `${seconds} Seconden geleden`;
   } else if (seconds < 90) {
-    return "About a minute ago";
+    return "Ongeveer een minuut geleden";
   } else if (minutes < 60) {
-    return `${minutes} Minutes ago`;
+    return `${minutes} Minuten geleden`;
   } else if (isToday) {
-    return getFormattedDate(date, "Today");
+    return getFormattedDate(date, "Vandaag");
   } else if (isYesterday) {
-    return getFormattedDate(date, "Yesterday");
+    return getFormattedDate(date, "Gisteren");
   } else if (isThisYear) {
     return getFormattedDate(date, false, true);
   }
@@ -188,12 +188,12 @@ $(document).ready(() => {
     $(".gallery-inner-container").empty();
     $(".convictions-holder").empty();
 
-    let licencesHTML = '<div style="color: #fff; text-align:center;">No Licenses</div>';
-    let tagsHTML = '<div style="color: #fff; text-align:center;">No Tags</div>';
-    let convHTML = '<div style="color: #fff; text-align:center;">Clean Record ?</div>';
-    let vehHTML = '<div style="color: #fff; text-align:center;">No Vehicles</div>';
-    let galleryHTML = '<div style="color: #fff; text-align:center;">No Photos</div>';
-    let propertyHTML = '<div style="color: #fff; text-align:center;">No Properties</div>';
+    let licencesHTML = '<div style="color: #fff; text-align:center;">Geen licenties</div>';
+    let tagsHTML = '<div style="color: #fff; text-align:center;">Geen tags</div>';
+    let convHTML = '<div style="color: #fff; text-align:center;">Blanco strafblad?</div>';
+    let vehHTML = '<div style="color: #fff; text-align:center;">Geen voertuigen</div>';
+    let galleryHTML = '<div style="color: #fff; text-align:center;">Geen fotos</div>';
+    let propertyHTML = '<div style="color: #fff; text-align:center;">Geen eigendommen</div>';
 
     // convert key value pair object of licenses to array
     let licenses = Object.entries(result.licences);
@@ -420,7 +420,7 @@ $(document).ready(() => {
         $(".tags-holder")
           .find("div")
           .each(function () {
-            if ($(this).text() != "" && $(this).text() != "No Tags") {
+            if ($(this).text() != "" && $(this).text() != "Geen tags") {
               tags.push($(this).text());
             }
         });
@@ -3497,23 +3497,23 @@ $(document).ready(() => {
       if (PoliceJobs[sentJob] !== undefined) {
         document.documentElement.style.setProperty(
           "--color-1",
-          "#1E3955"
+          "rgb(12 117 230 / 60%);"
         );
         document.documentElement.style.setProperty(
           "--color-2",
-          "#213F5F"
+          "transparent"
         );
         document.documentElement.style.setProperty(
           "--color-3",
-          "#2C537B"
+          "transparent"
         );
         document.documentElement.style.setProperty(
           "--color-4",
-          "#23405E"
+          "rgba(0,0,0,0.5)"
         );
         document.documentElement.style.setProperty(
           "--color-5",
-          "#152638"
+          "rgba(0,0,0,0.3)"
         );
         document.documentElement.style.setProperty(
           "--color-6",
@@ -3529,40 +3529,40 @@ $(document).ready(() => {
         );
         document.documentElement.style.setProperty(
           "--color-9",
-          "#6E707C"
+          "rgba(0,0,0,0.9)"
         );
         document.documentElement.style.setProperty(
           "--color-10",
-          "#8f741b"
+          "rgba(206,162,18,0.9)"
         );
         $(".badge-logo").attr("src", "img/sasp_badge.png");
-        $(".header-title").html("SAN ANDREAS STATE POLICE");
-        $(".bolo-nav-item").html("BOLOs");
-        $(".bolos-search-title").html("Bolos");
-        $("#bolos-search-input").attr("placeholder", "Search Bolo...");
-        $(".manage-bolos-title").html("Manage Bolo");
+        $(".header-title").html("Havenstad Politie");
+        $(".bolo-nav-item").html("BOLO's");
+        $(".bolos-search-title").html("Bolo's");
+        $("#bolos-search-input").attr("placeholder", "Zoek Bolo...");
+        $(".manage-bolos-title").html("Beheer Bolo");
         $(".manage-bolos-editing-title").html(
-          "You are currently creating a new BOLO"
+          "Je bent momenteel een nieuwe BOLO aan het maken"
         );
-        $(".boloplate-title").html("Plate");
-        $(".boloowner-title").html("Owner");
-        $(".boloindividual-title").html("Individual");
-        $("#boloplate").attr("placeholder", "Place plate here...");
+        $(".boloplate-title").html("Nummerplaat");
+        $(".boloowner-title").html("Eigenaar");
+        $(".boloindividual-title").html("Individu");
+        $("#boloplate").attr("placeholder", "Noteer nummerplaat hier...");
         $("#bolodetail").attr(
           "placeholder",
-          "Bolo detail goes here..."
+          "Bolo details komen hier..."
         );
         $("#boloowner").attr(
           "placeholder",
-          "Place vehicle owner here..."
+          "Plaats naam van voertuig eigenaar..."
         );
         $("#boloindividual").attr(
           "placeholder",
-          "Place invidivual here..."
+          "Plaats inidividu hier..."
         );
         $("#home-warrants-container").fadeIn(0);
         $("#home-reports-container").fadeOut(0);
-        $(".quote-span").html("TUCKER MALD, BEST MALD");
+        $(".quote-span").html("De Politie, Uw vriend! <3");
         $(".incidents-nav-item").show();
         $(".bolo-nav-item").show();
         $(".dmv-nav-item").show();
@@ -3572,7 +3572,7 @@ $(document).ready(() => {
         $(".manage-profile-name-input-1").attr("readonly", true);
         $(".manage-profile-name-input-2").attr("readonly", true);
         $("#reports-officers-involved-tag-title").html(
-          "Officers Involved"
+          "Betrokken officieren"
         );
         $(".roster-iframe").attr("src", rosterLink);
 
@@ -4832,10 +4832,10 @@ function fidgetSpinner(page) {
 function timeShit() {
   let localDate = new Date();
   const myTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
-  date = localDate.toLocaleDateString("en-US", {
+  date = localDate.toLocaleDateString("nl-BE", {
     timeZone: myTimeZone,
   });
-  time = localDate.toLocaleTimeString("en-US", {
+  time = localDate.toLocaleTimeString("nl-BE", {
     timeZone: myTimeZone,
   });
   $(".date").html(date);
